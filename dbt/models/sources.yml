@@ -1,0 +1,61 @@
+version: 2
+
+sources:
+  - name: nyc_taxi
+    description: "NYC Yellow Taxi and Weather data"
+    database: nyc_taxi_db
+    schema: public
+    tables:
+      - name: fact_taxi_trips
+        description: "Yellow taxi trip data"
+        columns:
+          - name: pickup_datetime
+            description: "Time when the meter was engaged"
+          - name: dropoff_datetime
+            description: "Time when the meter was disengaged"
+          - name: trip_duration_minutes
+            description: "Duration of the trip in minutes"
+          - name: distance_km
+            description: "Trip distance in kilometers"
+          - name: distance_bucket
+            description: "Distance category (0-2 km, 2-5 km, >5 km)"
+          - name: fare_amount
+            description: "Fare amount in USD"
+          - name: tip_amount
+            description: "Tip amount in USD"
+          - name: tip_percentage
+            description: "Tip as percentage of fare"
+          - name: payment_type
+            description: "Payment method"
+          - name: pickup_hour
+            description: "Hour of pickup"
+          - name: pickup_day_of_week
+            description: "Day of week of pickup"
+          - name: passenger_count
+            description: "Number of passengers"
+          - name: pickup_location_id
+            description: "TLC Taxi Zone of pickup location"
+          - name: dropoff_location_id
+            description: "TLC Taxi Zone of dropoff location"
+
+      - name: dim_weather
+        description: "Weather data for NYC"
+        columns:
+          - name: timestamp
+            description: "Timestamp of weather observation"
+          - name: temperature
+            description: "Temperature in Celsius"
+          - name: humidity
+            description: "Humidity percentage"
+          - name: wind_speed
+            description: "Wind speed in m/s"
+          - name: weather_condition
+            description: "Main weather condition"
+          - name: weather_description
+            description: "Detailed weather description"
+          - name: weather_category
+            description: "Weather category (Clear, Rainy, Stormy, Other)"
+          - name: hour_of_day
+            description: "Hour of day"
+          - name: day_of_week
+            description: "Day of week"
