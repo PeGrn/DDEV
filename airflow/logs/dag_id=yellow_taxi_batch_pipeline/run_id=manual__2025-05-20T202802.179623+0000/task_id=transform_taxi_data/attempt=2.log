@@ -1,0 +1,97 @@
+[2025-05-20T20:43:25.850+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.transform_taxi_data manual__2025-05-20T20:28:02.179623+00:00 [queued]>
+[2025-05-20T20:43:25.878+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.transform_taxi_data manual__2025-05-20T20:28:02.179623+00:00 [queued]>
+[2025-05-20T20:43:25.883+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2025-05-20T20:43:25.949+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): transform_taxi_data> on 2025-05-20 20:28:02.179623+00:00
+[2025-05-20T20:43:25.977+0000] {standard_task_runner.py:57} INFO - Started process 181 to run task
+[2025-05-20T20:43:26.033+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'yellow_taxi_batch_pipeline', 'transform_taxi_data', 'manual__2025-05-20T20:28:02.179623+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/taxi_batch_dag.py', '--cfg-path', '/tmp/tmp5juien9d']
+[2025-05-20T20:43:26.049+0000] {standard_task_runner.py:85} INFO - Job 39: Subtask transform_taxi_data
+[2025-05-20T20:43:26.277+0000] {logging_mixin.py:151} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-20T20:43:26.755+0000] {task_command.py:415} INFO - Running <TaskInstance: yellow_taxi_batch_pipeline.transform_taxi_data manual__2025-05-20T20:28:02.179623+00:00 [running]> on host 54a986196d48
+[2025-05-20T20:43:27.423+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='yellow_taxi_batch_pipeline' AIRFLOW_CTX_TASK_ID='transform_taxi_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-20T20:28:02.179623+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-20T20:28:02.179623+00:00'
+[2025-05-20T20:43:27.434+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-20T20:43:27.439+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n    spark-submit         --master spark://spark-master:7077         --jars /opt/airflow/dags/jars/***ql-42.5.0.jar         --packages org.apache.hadoop:hadoop-aws:3.3.1         /opt/airflow/dags/scripts/taxi_transform.py\n    ']
+[2025-05-20T20:43:27.468+0000] {subprocess.py:86} INFO - Output:
+[2025-05-20T20:43:27.582+0000] {subprocess.py:93} INFO - /opt/spark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-05-20T20:43:37.184+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-05-20T20:43:37.484+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/airflow/.ivy2/cache
+[2025-05-20T20:43:37.485+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/airflow/.ivy2/jars
+[2025-05-20T20:43:37.499+0000] {subprocess.py:93} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2025-05-20T20:43:37.507+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-514a036f-011b-4ac3-a286-27174b55773f;1.0
+[2025-05-20T20:43:37.508+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-05-20T20:43:42.864+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 5358ms :: artifacts dl 0ms
+[2025-05-20T20:43:42.873+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-05-20T20:43:42.901+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-05-20T20:43:42.917+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-05-20T20:43:42.947+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-05-20T20:43:42.956+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-05-20T20:43:42.979+0000] {subprocess.py:93} INFO - 	|      default     |   1   |   0   |   0   |   0   ||   0   |   0   |
+[2025-05-20T20:43:42.991+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-05-20T20:43:42.993+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:42.996+0000] {subprocess.py:93} INFO - :: problems summary ::
+[2025-05-20T20:43:43.000+0000] {subprocess.py:93} INFO - :::: WARNINGS
+[2025-05-20T20:43:43.020+0000] {subprocess.py:93} INFO - 	io problem while parsing ivy file: https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.pom (java.io.FileNotFoundException: /home/airflow/.ivy2/cache/org.apache.hadoop/hadoop-aws/ivy-3.3.1.xml.original (No such file or directory))
+[2025-05-20T20:43:43.030+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.033+0000] {subprocess.py:93} INFO - 		module not found: org.apache.hadoop#hadoop-aws;3.3.1
+[2025-05-20T20:43:43.034+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.036+0000] {subprocess.py:93} INFO - 	==== local-m2-cache: tried
+[2025-05-20T20:43:43.041+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.055+0000] {subprocess.py:93} INFO - 	  file:/home/airflow/.m2/repository/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.pom
+[2025-05-20T20:43:43.056+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.057+0000] {subprocess.py:93} INFO - 	  -- artifact org.apache.hadoop#hadoop-aws;3.3.1!hadoop-aws.jar:
+[2025-05-20T20:43:43.057+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.058+0000] {subprocess.py:93} INFO - 	  file:/home/airflow/.m2/repository/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.jar
+[2025-05-20T20:43:43.060+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.060+0000] {subprocess.py:93} INFO - 	==== local-ivy-cache: tried
+[2025-05-20T20:43:43.060+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.067+0000] {subprocess.py:93} INFO - 	  /home/airflow/.ivy2/local/org.apache.hadoop/hadoop-aws/3.3.1/ivys/ivy.xml
+[2025-05-20T20:43:43.068+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.069+0000] {subprocess.py:93} INFO - 	  -- artifact org.apache.hadoop#hadoop-aws;3.3.1!hadoop-aws.jar:
+[2025-05-20T20:43:43.069+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.069+0000] {subprocess.py:93} INFO - 	  /home/airflow/.ivy2/local/org.apache.hadoop/hadoop-aws/3.3.1/jars/hadoop-aws.jar
+[2025-05-20T20:43:43.078+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.079+0000] {subprocess.py:93} INFO - 	==== central: tried
+[2025-05-20T20:43:43.080+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.080+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.pom
+[2025-05-20T20:43:43.091+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.092+0000] {subprocess.py:93} INFO - 	==== spark-packages: tried
+[2025-05-20T20:43:43.094+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.096+0000] {subprocess.py:93} INFO - 	  https://repos.spark-packages.org/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.pom
+[2025-05-20T20:43:43.098+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.100+0000] {subprocess.py:93} INFO - 	  -- artifact org.apache.hadoop#hadoop-aws;3.3.1!hadoop-aws.jar:
+[2025-05-20T20:43:43.101+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.102+0000] {subprocess.py:93} INFO - 	  https://repos.spark-packages.org/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.jar
+[2025-05-20T20:43:43.104+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.105+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-05-20T20:43:43.105+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.106+0000] {subprocess.py:93} INFO - 		::          UNRESOLVED DEPENDENCIES         ::
+[2025-05-20T20:43:43.106+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.107+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-05-20T20:43:43.107+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.108+0000] {subprocess.py:93} INFO - 		:: org.apache.hadoop#hadoop-aws;3.3.1: not found
+[2025-05-20T20:43:43.109+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.109+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-05-20T20:43:43.110+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.111+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.111+0000] {subprocess.py:93} INFO - 
+[2025-05-20T20:43:43.112+0000] {subprocess.py:93} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2025-05-20T20:43:43.112+0000] {subprocess.py:93} INFO - Exception in thread "main" java.lang.RuntimeException: [unresolved dependency: org.apache.hadoop#hadoop-aws;3.3.1: not found]
+[2025-05-20T20:43:43.113+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1456)
+[2025-05-20T20:43:43.113+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2025-05-20T20:43:43.114+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:308)
+[2025-05-20T20:43:43.114+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:901)
+[2025-05-20T20:43:43.115+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:180)
+[2025-05-20T20:43:43.116+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:203)
+[2025-05-20T20:43:43.116+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:90)
+[2025-05-20T20:43:43.117+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1046)
+[2025-05-20T20:43:43.118+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1055)
+[2025-05-20T20:43:43.118+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-05-20T20:43:43.119+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-20T20:43:43.152+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-05-20T20:43:43.161+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=yellow_taxi_batch_pipeline, task_id=transform_taxi_data, execution_date=20250520T202802, start_date=20250520T204325, end_date=20250520T204343
+[2025-05-20T20:43:43.191+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 39 for task transform_taxi_data (Bash command failed. The command returned a non-zero exit code 1.; 181)
+[2025-05-20T20:43:43.243+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-20T20:43:43.312+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

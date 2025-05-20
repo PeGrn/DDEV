@@ -12,8 +12,7 @@ from botocore.client import Config
 from io import BytesIO
 
 # Configuration
-OPENWEATHER_API_KEY = "951d8917fa8b154afd44712c1c73ac4c
-"  # Replace with your API key
+OPENWEATHER_API_KEY = "951d8917fa8b154afd44712c1c73ac4c"  # Replace with your API key
 MINIO_ENDPOINT = 'http://minio:9000'
 MINIO_ACCESS_KEY = 'minio'
 MINIO_SECRET_KEY = 'minio123'

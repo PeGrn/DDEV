@@ -1,0 +1,634 @@
+[2025-05-20T20:18:03.527+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-20T20:18:03.527+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-20T20:18:03.528+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-20T20:18:03.528+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:18:03.580+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:18:04.141+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/taxi_batch_dag.py           166  0.28s             0           0
+/opt/airflow/dags/weather_streaming_dag.py    170  0.23s             0           0
+================================================================================
+[2025-05-20T20:18:34.924+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.83s           2025-05-20T20:18:05
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.80s           2025-05-20T20:18:05
+================================================================================
+[2025-05-20T20:19:04.992+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.39s           2025-05-20T20:18:36
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.38s           2025-05-20T20:18:36
+================================================================================
+[2025-05-20T20:19:35.247+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.33s           2025-05-20T20:19:08
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.33s           2025-05-20T20:19:08
+================================================================================
+[2025-05-20T20:20:05.779+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.25s           2025-05-20T20:19:38
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.27s           2025-05-20T20:19:38
+================================================================================
+[2025-05-20T20:20:25.293+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-20T20:21:08.773+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-20T20:21:08.774+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-20T20:21:08.774+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-20T20:21:08.775+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:21:08.798+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:21:08.981+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/taxi_batch_dag.py           167  0.13s             0           0
+/opt/airflow/dags/weather_streaming_dag.py    170  0.11s             0           0
+================================================================================
+[2025-05-20T20:21:39.271+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py           177  0.01s             1           0  0.26s           2025-05-20T20:21:09
+/opt/airflow/dags/weather_streaming_dag.py    180  0.00s             1           0  0.24s           2025-05-20T20:21:09
+================================================================================
+[2025-05-20T20:22:03.544+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-20T20:23:05.750+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-20T20:23:05.751+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-20T20:23:05.751+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-20T20:23:05.751+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:23:05.776+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:23:05.892+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/taxi_batch_dag.py           167  0.07s             0           0
+/opt/airflow/dags/weather_streaming_dag.py    170  0.06s             0           0
+================================================================================
+[2025-05-20T20:23:36.157+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py           183  0.02s             1           0  0.23s           2025-05-20T20:23:06
+/opt/airflow/dags/weather_streaming_dag.py    186  0.00s             1           0  0.22s           2025-05-20T20:23:06
+================================================================================
+[2025-05-20T20:24:06.476+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py           193  0.02s             1           0  0.19s           2025-05-20T20:23:36
+/opt/airflow/dags/weather_streaming_dag.py    196  0.01s             1           0  0.18s           2025-05-20T20:23:36
+================================================================================
+[2025-05-20T20:24:36.768+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.41s           2025-05-20T20:24:06
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.39s           2025-05-20T20:24:06
+================================================================================
+[2025-05-20T20:25:07.362+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.28s           2025-05-20T20:24:37
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.28s           2025-05-20T20:24:37
+================================================================================
+[2025-05-20T20:25:38.211+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py           223  0.01s             1           0  0.25s           2025-05-20T20:25:07
+/opt/airflow/dags/weather_streaming_dag.py    226  0.00s             1           0  0.25s           2025-05-20T20:25:07
+================================================================================
+[2025-05-20T20:25:57.703+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-20T20:26:34.941+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-20T20:26:34.942+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-20T20:26:34.943+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-20T20:26:34.943+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:26:35.078+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:26:35.183+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/taxi_batch_dag.py           175  0.06s             0           0
+/opt/airflow/dags/weather_streaming_dag.py    178  0.05s             0           0
+================================================================================
+[2025-05-20T20:27:05.415+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py           185  0.02s             1           0  0.20s           2025-05-20T20:26:35
+/opt/airflow/dags/weather_streaming_dag.py    188  0.00s             1           0  0.18s           2025-05-20T20:26:35
+================================================================================
+[2025-05-20T20:27:35.811+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py           207  0.06s             1           0  0.17s           2025-05-20T20:27:05
+/opt/airflow/dags/weather_streaming_dag.py    210  0.02s             1           0  0.17s           2025-05-20T20:27:05
+================================================================================
+[2025-05-20T20:28:06.217+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.60s           2025-05-20T20:27:37
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.58s           2025-05-20T20:27:37
+================================================================================
+[2025-05-20T20:28:36.702+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.59s           2025-05-20T20:28:09
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.55s           2025-05-20T20:28:09
+================================================================================
+[2025-05-20T20:29:07.088+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  2.68s           2025-05-20T20:28:42
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  2.70s           2025-05-20T20:28:42
+================================================================================
+[2025-05-20T20:29:37.243+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.34s           2025-05-20T20:29:13
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.32s           2025-05-20T20:29:13
+================================================================================
+[2025-05-20T20:30:07.494+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.26s           2025-05-20T20:29:43
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.26s           2025-05-20T20:29:43
+================================================================================
+[2025-05-20T20:30:38.128+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.14s           2025-05-20T20:30:14
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.14s           2025-05-20T20:30:14
+================================================================================
+[2025-05-20T20:31:08.471+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.15s           2025-05-20T20:30:44
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.14s           2025-05-20T20:30:44
+================================================================================
+[2025-05-20T20:31:35.720+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:31:35.766+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:31:38.807+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.13s           2025-05-20T20:31:14
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.13s           2025-05-20T20:31:14
+================================================================================
+[2025-05-20T20:31:59.970+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-20T20:43:18.103+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-20T20:43:18.104+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-20T20:43:18.105+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-20T20:43:18.106+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:43:18.190+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:43:18.524+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/taxi_batch_dag.py           166  0.13s             0           0
+/opt/airflow/dags/weather_streaming_dag.py    168  0.09s             0           0
+================================================================================
+[2025-05-20T20:43:49.139+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.81s           2025-05-20T20:43:19
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.78s           2025-05-20T20:43:19
+================================================================================
+[2025-05-20T20:44:19.674+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  3.65s           2025-05-20T20:43:53
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  3.51s           2025-05-20T20:43:53
+================================================================================
+[2025-05-20T20:44:50.120+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  8.87s           2025-05-20T20:44:32
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  8.85s           2025-05-20T20:44:32
+================================================================================
+[2025-05-20T20:45:20.784+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  2.49s           2025-05-20T20:45:05
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  2.47s           2025-05-20T20:45:05
+================================================================================
+[2025-05-20T20:45:50.920+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  3.38s           2025-05-20T20:45:39
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  3.28s           2025-05-20T20:45:39
+================================================================================
+[2025-05-20T20:46:20.951+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  2.59s           2025-05-20T20:46:13
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  2.59s           2025-05-20T20:46:13
+================================================================================
+[2025-05-20T20:46:51.637+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.88s           2025-05-20T20:46:45
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.75s           2025-05-20T20:46:45
+================================================================================
+[2025-05-20T20:47:22.365+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.51s           2025-05-20T20:47:16
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.65s           2025-05-20T20:47:16
+================================================================================
+[2025-05-20T20:47:52.410+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.41s           2025-05-20T20:47:48
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.29s           2025-05-20T20:47:48
+================================================================================
+[2025-05-20T20:48:18.152+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:48:18.344+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:48:22.439+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  0.33s           2025-05-20T20:48:19
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.28s           2025-05-20T20:48:19
+================================================================================
+[2025-05-20T20:48:52.494+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.45s           2025-05-20T20:48:51
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.85s           2025-05-20T20:48:51
+================================================================================
+[2025-05-20T20:49:23.182+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py          1002  0.79s             1           0  1.45s           2025-05-20T20:48:51
+/opt/airflow/dags/weather_streaming_dag.py   1005  0.43s             1           0  1.85s           2025-05-20T20:48:51
+================================================================================
+[2025-05-20T20:49:53.671+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  2.77s           2025-05-20T20:49:25
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  2.44s           2025-05-20T20:49:25
+================================================================================
+[2025-05-20T20:50:24.227+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.02s           2025-05-20T20:49:56
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  0.93s           2025-05-20T20:49:56
+================================================================================
+[2025-05-20T20:50:54.627+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.85s           2025-05-20T20:50:29
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.45s           2025-05-20T20:50:29
+================================================================================
+[2025-05-20T20:51:24.927+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.96s           2025-05-20T20:51:01
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  2.08s           2025-05-20T20:51:01
+================================================================================
+[2025-05-20T20:51:55.482+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  1.77s           2025-05-20T20:51:34
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  1.56s           2025-05-20T20:51:34
+================================================================================
+[2025-05-20T20:52:25.600+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  12.02s          2025-05-20T20:52:17
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  11.20s          2025-05-20T20:52:17
+================================================================================
+[2025-05-20T20:52:55.904+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  5.13s           2025-05-20T20:52:52
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  4.74s           2025-05-20T20:52:52
+================================================================================
+[2025-05-20T20:53:18.541+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:53:18.752+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:53:26.240+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py          1072  3.08s             1           0  5.13s           2025-05-20T20:52:52
+/opt/airflow/dags/weather_streaming_dag.py   1074  2.58s             1           0  4.74s           2025-05-20T20:52:52
+================================================================================
+[2025-05-20T20:53:56.950+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  9.68s           2025-05-20T20:53:32
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  9.09s           2025-05-20T20:53:32
+================================================================================
+[2025-05-20T20:54:29.192+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  2.52s           2025-05-20T20:54:05
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  2.39s           2025-05-20T20:54:05
+================================================================================
+[2025-05-20T20:54:59.354+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  5.96s           2025-05-20T20:54:42
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  5.35s           2025-05-20T20:54:42
+================================================================================
+[2025-05-20T20:55:29.255+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  13.68s          2025-05-20T20:55:26
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  12.34s          2025-05-20T20:55:26
+================================================================================
+[2025-05-20T20:55:59.828+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py          1112  2.69s             1           0  13.68s          2025-05-20T20:55:26
+/opt/airflow/dags/weather_streaming_dag.py   1114  2.08s             1           0  12.34s          2025-05-20T20:55:26
+================================================================================
+[2025-05-20T20:56:30.129+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  6.68s           2025-05-20T20:56:03
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  6.14s           2025-05-20T20:56:03
+================================================================================
+[2025-05-20T20:57:00.332+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  5.14s           2025-05-20T20:56:39
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  5.07s           2025-05-20T20:56:39
+================================================================================
+[2025-05-20T20:57:30.665+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  5.24s           2025-05-20T20:57:14
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  4.96s           2025-05-20T20:57:14
+================================================================================
+[2025-05-20T20:58:01.610+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py          1145  13.82s            1           0  5.24s           2025-05-20T20:57:14
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  12.50s          2025-05-20T20:57:57
+================================================================================
+[2025-05-20T20:58:19.374+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T20:58:21.451+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T20:58:34.798+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  18.72s          2025-05-20T20:58:06
+/opt/airflow/dags/weather_streaming_dag.py   1152  4.75s             1           0  12.50s          2025-05-20T20:57:57
+================================================================================
+[2025-05-20T20:59:05.728+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  20.44s          2025-05-20T20:58:58
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  26.77s          2025-05-20T20:58:54
+================================================================================
+[2025-05-20T20:59:39.550+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py          1165  4.44s             1           0  20.44s          2025-05-20T20:58:58
+/opt/airflow/dags/weather_streaming_dag.py   1162  12.44s            1           0  26.77s          2025-05-20T20:58:54
+================================================================================
+[2025-05-20T21:00:09.936+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  21.92s          2025-05-20T20:59:56
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  29.97s          2025-05-20T20:59:56
+================================================================================
+[2025-05-20T21:00:40.478+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py          1172  13.23s            1           0  21.92s          2025-05-20T20:59:56
+/opt/airflow/dags/weather_streaming_dag.py   1175  11.35s            1           0  29.97s          2025-05-20T20:59:56
+================================================================================
+[2025-05-20T21:01:11.096+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  14.47s          2025-05-20T21:00:41
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  12.69s          2025-05-20T21:00:41
+================================================================================
+[2025-05-20T21:01:41.185+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  7.02s           2025-05-20T21:01:19
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  6.36s           2025-05-20T21:01:19
+================================================================================
+[2025-05-20T21:02:11.545+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  11.30s          2025-05-20T21:02:01
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  9.47s           2025-05-20T21:02:01
+================================================================================
+[2025-05-20T21:02:41.648+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  3.54s           2025-05-20T21:02:35
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  3.13s           2025-05-20T21:02:35
+================================================================================
+[2025-05-20T21:03:12.296+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                     PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py          1230  6.21s             1           0  3.54s           2025-05-20T21:02:35
+/opt/airflow/dags/weather_streaming_dag.py   1232  4.53s             1           0  3.13s           2025-05-20T21:02:35
+================================================================================
+[2025-05-20T21:03:19.395+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-20T21:03:19.572+0000] {manager.py:762} INFO - There are 2 files in /opt/airflow/dags
+[2025-05-20T21:03:42.514+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  7.29s           2025-05-20T21:03:13
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  5.45s           2025-05-20T21:03:13
+================================================================================
+[2025-05-20T21:04:12.757+0000] {manager.py:893} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/taxi_batch_dag.py                                  1           0  5.67s           2025-05-20T21:03:49
+/opt/airflow/dags/weather_streaming_dag.py                           1           0  6.10s           2025-05-20T21:03:49
+================================================================================
+[2025-05-20T21:04:24.754+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15

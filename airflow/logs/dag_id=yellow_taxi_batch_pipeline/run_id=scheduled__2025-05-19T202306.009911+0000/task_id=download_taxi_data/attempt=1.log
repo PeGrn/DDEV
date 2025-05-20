@@ -1,0 +1,24 @@
+[2025-05-20T20:23:28.747+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.download_taxi_data scheduled__2025-05-19T20:23:06.009911+00:00 [queued]>
+[2025-05-20T20:23:28.757+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.download_taxi_data scheduled__2025-05-19T20:23:06.009911+00:00 [queued]>
+[2025-05-20T20:23:28.757+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2025-05-20T20:23:28.779+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): download_taxi_data> on 2025-05-19 20:23:06.009911+00:00
+[2025-05-20T20:23:28.785+0000] {standard_task_runner.py:57} INFO - Started process 181 to run task
+[2025-05-20T20:23:28.792+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'yellow_taxi_batch_pipeline', 'download_taxi_data', 'scheduled__2025-05-19T20:23:06.009911+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/taxi_batch_dag.py', '--cfg-path', '/tmp/tmp9s_ppnjd']
+[2025-05-20T20:23:28.805+0000] {standard_task_runner.py:85} INFO - Job 28: Subtask download_taxi_data
+[2025-05-20T20:23:28.870+0000] {logging_mixin.py:151} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-20T20:23:28.994+0000] {task_command.py:415} INFO - Running <TaskInstance: yellow_taxi_batch_pipeline.download_taxi_data scheduled__2025-05-19T20:23:06.009911+00:00 [running]> on host a1b921ebc24a
+[2025-05-20T20:23:29.157+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='yellow_taxi_batch_pipeline' AIRFLOW_CTX_TASK_ID='download_taxi_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-19T20:23:06.009911+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-19T20:23:06.009911+00:00'
+[2025-05-20T20:23:29.162+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-20T20:23:29.163+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/airflow/dags/scripts/download_taxi_data.py']
+[2025-05-20T20:23:29.179+0000] {subprocess.py:86} INFO - Output:
+[2025-05-20T20:23:29.336+0000] {subprocess.py:93} INFO - python: can't open file '/opt/airflow/dags/scripts/download_taxi_data.py': [Errno 2] No such file or directory
+[2025-05-20T20:23:29.340+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-05-20T20:23:29.358+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-05-20T20:23:29.364+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=yellow_taxi_batch_pipeline, task_id=download_taxi_data, execution_date=20250519T202306, start_date=20250520T202328, end_date=20250520T202329
+[2025-05-20T20:23:29.384+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 28 for task download_taxi_data (Bash command failed. The command returned a non-zero exit code 2.; 181)
+[2025-05-20T20:23:29.416+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-20T20:23:29.446+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

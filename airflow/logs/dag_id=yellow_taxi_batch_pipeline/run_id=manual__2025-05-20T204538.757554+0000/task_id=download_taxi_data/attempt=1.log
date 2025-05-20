@@ -1,0 +1,43 @@
+[2025-05-20T20:45:47.111+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.download_taxi_data manual__2025-05-20T20:45:38.757554+00:00 [queued]>
+[2025-05-20T20:45:47.159+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.download_taxi_data manual__2025-05-20T20:45:38.757554+00:00 [queued]>
+[2025-05-20T20:45:47.160+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2025-05-20T20:45:47.223+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): download_taxi_data> on 2025-05-20 20:45:38.757554+00:00
+[2025-05-20T20:45:47.243+0000] {standard_task_runner.py:57} INFO - Started process 484 to run task
+[2025-05-20T20:45:47.263+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'yellow_taxi_batch_pipeline', 'download_taxi_data', 'manual__2025-05-20T20:45:38.757554+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/taxi_batch_dag.py', '--cfg-path', '/tmp/tmppxq2e06p']
+[2025-05-20T20:45:47.294+0000] {standard_task_runner.py:85} INFO - Job 42: Subtask download_taxi_data
+[2025-05-20T20:45:47.452+0000] {logging_mixin.py:151} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-20T20:45:47.796+0000] {task_command.py:415} INFO - Running <TaskInstance: yellow_taxi_batch_pipeline.download_taxi_data manual__2025-05-20T20:45:38.757554+00:00 [running]> on host 54a986196d48
+[2025-05-20T20:45:48.271+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='yellow_taxi_batch_pipeline' AIRFLOW_CTX_TASK_ID='download_taxi_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-20T20:45:38.757554+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-20T20:45:38.757554+00:00'
+[2025-05-20T20:45:48.275+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-20T20:45:48.297+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/airflow/dags/scripts/download_taxi_data.py']
+[2025-05-20T20:45:48.338+0000] {subprocess.py:86} INFO - Output:
+[2025-05-20T20:45:59.639+0000] {subprocess.py:93} INFO - 2025-05-20 20:45:59,638 - INFO - Bucket nyc-taxi-data already exists
+[2025-05-20T20:45:59.641+0000] {subprocess.py:93} INFO - 2025-05-20 20:45:59,639 - INFO - Downloading yellow_tripdata_2022-01.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.parquet
+[2025-05-20T20:46:05.305+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:05,302 - INFO - Successfully uploaded yellow_tripdata_2022-01.parquet to MinIO
+[2025-05-20T20:46:05.308+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:05,305 - INFO - Downloading yellow_tripdata_2022-02.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-02.parquet
+[2025-05-20T20:46:11.177+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:11,176 - INFO - Successfully uploaded yellow_tripdata_2022-02.parquet to MinIO
+[2025-05-20T20:46:11.187+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:11,176 - INFO - Downloading yellow_tripdata_2022-03.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet
+[2025-05-20T20:46:17.756+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:17,754 - INFO - Successfully uploaded yellow_tripdata_2022-03.parquet to MinIO
+[2025-05-20T20:46:17.758+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:17,754 - INFO - Downloading yellow_tripdata_2022-04.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-04.parquet
+[2025-05-20T20:46:26.259+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:26,257 - INFO - Successfully uploaded yellow_tripdata_2022-04.parquet to MinIO
+[2025-05-20T20:46:26.260+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:26,258 - INFO - Downloading yellow_tripdata_2022-05.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-05.parquet
+[2025-05-20T20:46:34.546+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:34,537 - INFO - Successfully uploaded yellow_tripdata_2022-05.parquet to MinIO
+[2025-05-20T20:46:34.548+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:34,537 - INFO - Downloading yellow_tripdata_2022-06.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-06.parquet
+[2025-05-20T20:46:41.825+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:41,824 - INFO - Successfully uploaded yellow_tripdata_2022-06.parquet to MinIO
+[2025-05-20T20:46:41.826+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:41,824 - INFO - Downloading yellow_tripdata_2022-07.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-07.parquet
+[2025-05-20T20:46:47.578+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:47,577 - INFO - Successfully uploaded yellow_tripdata_2022-07.parquet to MinIO
+[2025-05-20T20:46:47.582+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:47,577 - INFO - Downloading yellow_tripdata_2022-08.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-08.parquet
+[2025-05-20T20:46:54.392+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:54,391 - INFO - Successfully uploaded yellow_tripdata_2022-08.parquet to MinIO
+[2025-05-20T20:46:54.394+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:54,391 - INFO - Downloading yellow_tripdata_2022-09.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-09.parquet
+[2025-05-20T20:46:59.143+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:59,142 - INFO - Successfully uploaded yellow_tripdata_2022-09.parquet to MinIO
+[2025-05-20T20:46:59.144+0000] {subprocess.py:93} INFO - 2025-05-20 20:46:59,142 - INFO - Downloading yellow_tripdata_2022-10.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-10.parquet
+[2025-05-20T20:47:03.365+0000] {subprocess.py:93} INFO - 2025-05-20 20:47:03,364 - INFO - Successfully uploaded yellow_tripdata_2022-10.parquet to MinIO
+[2025-05-20T20:47:03.367+0000] {subprocess.py:93} INFO - 2025-05-20 20:47:03,365 - INFO - Downloading yellow_tripdata_2022-11.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-11.parquet
+[2025-05-20T20:47:06.848+0000] {subprocess.py:93} INFO - 2025-05-20 20:47:06,848 - INFO - Successfully uploaded yellow_tripdata_2022-11.parquet to MinIO
+[2025-05-20T20:47:06.849+0000] {subprocess.py:93} INFO - 2025-05-20 20:47:06,848 - INFO - Downloading yellow_tripdata_2022-12.parquet from https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-12.parquet
+[2025-05-20T20:47:14.290+0000] {subprocess.py:93} INFO - 2025-05-20 20:47:14,289 - INFO - Successfully uploaded yellow_tripdata_2022-12.parquet to MinIO
+[2025-05-20T20:47:14.302+0000] {subprocess.py:93} INFO - 2025-05-20 20:47:14,300 - INFO - Taxi data download completed
+[2025-05-20T20:47:15.083+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-20T20:47:15.176+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=yellow_taxi_batch_pipeline, task_id=download_taxi_data, execution_date=20250520T204538, start_date=20250520T204547, end_date=20250520T204715
+[2025-05-20T20:47:15.293+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-20T20:47:15.353+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check
