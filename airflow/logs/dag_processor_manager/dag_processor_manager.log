@@ -2393,3 +2393,45 @@ File Path                                                  PID  Runtime      # D
 /opt/airflow/dags/weather_streaming_dag.py                                        1           0  0.12s           2025-05-21T16:56:15
 ================================================================================
 [2025-05-21T16:57:35.863+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-21T17:10:19.446+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-21T17:10:19.447+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-21T17:10:19.448+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-21T17:10:19.448+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-21T17:10:19.534+0000] {manager.py:762} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-21T17:11:09.682+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-21T17:11:10.016+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-21T17:11:10.017+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-21T17:11:10.017+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-21T17:11:10.018+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-21T17:11:10.099+0000] {manager.py:762} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-21T17:12:00.086+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-21T17:12:00.841+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-21T17:12:00.842+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-21T17:12:00.842+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-21T17:12:00.843+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-21T17:12:01.057+0000] {manager.py:762} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-21T17:12:51.814+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-21T17:12:53.097+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-21T17:12:53.117+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-21T17:12:53.119+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-21T17:12:53.122+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-21T17:12:53.585+0000] {manager.py:762} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-21T17:13:43.705+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-21T17:13:44.622+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-21T17:13:44.625+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-21T17:13:44.626+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-21T17:13:44.627+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-21T17:13:45.357+0000] {manager.py:762} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-21T17:14:34.666+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-21T17:14:35.735+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-21T17:14:35.737+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-21T17:14:35.738+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-21T17:14:35.739+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-21T17:14:37.490+0000] {manager.py:762} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-21T17:15:26.243+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-05-21T17:15:27.181+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-05-21T17:15:27.185+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-05-21T17:15:27.194+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-05-21T17:15:27.209+0000] {manager.py:759} INFO - Searching for files in /opt/airflow/dags
+[2025-05-21T17:15:27.608+0000] {manager.py:762} INFO - There are 5 files in /opt/airflow/dags
+[2025-05-21T17:16:17.306+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
