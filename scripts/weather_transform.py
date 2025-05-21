@@ -154,46 +154,28 @@ def save_to_postgres(df, table_name):
     logger.info(f"Saving data to PostgreSQL table: {table_name}")
     
     try:
-        # Check if dataframe is empty
-        count = df.count()
-        logger.info(f"DataFrame has {count} rows to save.")
-        
-        if count == 0:
-            logger.warning("DataFrame is empty. No data will be saved to PostgreSQL.")
-            return
-        
-        logger.info("Preparing JDBC connection properties...")
+        # Configuration JDBC avec propriétés spéciales pour les dépendances
         postgres_properties = {
             "user": "postgres",
             "password": "postgres",
-            "driver": "org.postgresql.Driver"
+            "driver": "org.postgresql.Driver",
+            "truncate": "true"  # Cette option est importante
         }
         
-        logger.info("Creating PostgreSQL URL...")
-        postgres_url = "jdbc:postgresql://postgres:5432/nyc_taxi_db"
-        logger.info(f"PostgreSQL URL: {postgres_url}")
-        
-        # Test connection to PostgreSQL
-        logger.info("Testing connection to PostgreSQL...")
-        test_df = df.limit(1)
-        
-        logger.info("Starting write operation to PostgreSQL...")
+        # D'abord vider la table sans la supprimer, puis ajouter les données
         df.write \
+            .option("truncate", "true") \
             .jdbc(
-                url=postgres_url,
+                url="jdbc:postgresql://postgres:5432/nyc_taxi_db",
                 table=table_name,
-                mode="overwrite",
+                mode="append",  # Utiliser append au lieu de overwrite
                 properties=postgres_properties
             )
         
-        logger.info(f"Successfully saved {count} rows to PostgreSQL table: {table_name}")
+        logger.info(f"Successfully saved data to PostgreSQL table: {table_name}")
     except Exception as e:
         logger.error(f"Failed to save data to PostgreSQL: {str(e)}")
         logger.error(traceback.format_exc())
-        logger.error("PostgreSQL connection details:")
-        logger.error(f"  URL: jdbc:postgresql://postgres:5432/nyc_taxi_db")
-        logger.error(f"  Table: {table_name}")
-        logger.error(f"  User: postgres")
         raise
 
 def test_postgres_connection():

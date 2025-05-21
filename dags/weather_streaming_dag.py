@@ -39,12 +39,12 @@ process_weather_data = BashOperator(
     task_id='process_weather_data',
     bash_command="""
     spark-submit \
-        --master spark://spark-master:7077 \
-        --packages org.postgresql:postgresql:42.5.0,org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.11.901 \
+        --master local[*] \
+        --jars /opt/airflow/dags/jars/postgresql-42.5.0.jar \
+        --packages org.apache.hadoop:hadoop-aws:3.3.1,com.amazonaws:aws-java-sdk-bundle:1.11.901 \
         /opt/airflow/dags/scripts/weather_transform.py
     """,
     dag=dag,
 )
-
 # Define task dependencies
 fetch_weather_data >> process_weather_data
