@@ -856,3 +856,52 @@
 [2025-05-21T16:56:46.156+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:46.156+0000] {dag.py:2915} INFO - Sync 1 DAGs
 [2025-05-21T16:56:46.174+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:46.173+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T15:56:46.173738+00:00, run_after=2025-05-21T16:56:46.173738+00:00
 [2025-05-21T16:56:46.191+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.086 seconds
+[2025-05-21T17:55:59.133+0000] {processor.py:157} INFO - Started process (PID=673) to work on /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:55:59.134+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/weather_streaming_dag.py for tasks to queue
+[2025-05-21T17:55:59.135+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:55:59.135+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:55:59.155+0000] {processor.py:839} INFO - DAG(s) dict_keys(['weather_streaming_pipeline']) retrieved from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:55:59.234+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:55:59.234+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T17:55:59.265+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:55:59.265+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T16:56:46.173738+00:00, run_after=2025-05-21T17:56:46.173738+00:00
+[2025-05-21T17:55:59.289+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.159 seconds
+[2025-05-21T17:56:46.314+0000] {processor.py:157} INFO - Started process (PID=703) to work on /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:56:46.315+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/weather_streaming_dag.py for tasks to queue
+[2025-05-21T17:56:46.316+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:56:46.316+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:56:46.338+0000] {processor.py:839} INFO - DAG(s) dict_keys(['weather_streaming_pipeline']) retrieved from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:56:46.372+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:56:46.372+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T17:56:46.398+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:56:46.397+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T17:56:46.173738+00:00, run_after=2025-05-21T18:56:46.173738+00:00
+[2025-05-21T17:56:46.423+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.113 seconds
+[2025-05-21T17:57:16.485+0000] {processor.py:157} INFO - Started process (PID=3154) to work on /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:57:16.486+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/weather_streaming_dag.py for tasks to queue
+[2025-05-21T17:57:16.487+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:57:16.487+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:57:16.514+0000] {processor.py:839} INFO - DAG(s) dict_keys(['weather_streaming_pipeline']) retrieved from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:57:16.552+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:57:16.552+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T17:57:16.580+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:57:16.579+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T17:56:46.173738+00:00, run_after=2025-05-21T18:56:46.173738+00:00
+[2025-05-21T17:57:16.608+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.129 seconds
+[2025-05-21T17:58:07.998+0000] {processor.py:157} INFO - Started process (PID=9191) to work on /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:58:07.999+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/weather_streaming_dag.py for tasks to queue
+[2025-05-21T17:58:08.000+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:58:08.000+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:58:08.024+0000] {processor.py:839} INFO - DAG(s) dict_keys(['weather_streaming_pipeline']) retrieved from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:58:08.062+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:58:08.062+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T17:58:08.089+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:58:08.088+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T17:56:46.173738+00:00, run_after=2025-05-21T18:56:46.173738+00:00
+[2025-05-21T17:58:08.112+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.119 seconds
+[2025-05-21T17:58:38.219+0000] {processor.py:157} INFO - Started process (PID=13876) to work on /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:58:38.220+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/weather_streaming_dag.py for tasks to queue
+[2025-05-21T17:58:38.221+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:58:38.221+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:58:38.244+0000] {processor.py:839} INFO - DAG(s) dict_keys(['weather_streaming_pipeline']) retrieved from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T17:58:38.284+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:58:38.283+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T17:58:38.310+0000] {logging_mixin.py:151} INFO - [2025-05-21T17:58:38.310+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T17:56:46.173738+00:00, run_after=2025-05-21T18:56:46.173738+00:00
+[2025-05-21T17:58:38.342+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.129 seconds
+[2025-05-21T18:45:17.919+0000] {processor.py:157} INFO - Started process (PID=685) to work on /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T18:45:17.920+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/weather_streaming_dag.py for tasks to queue
+[2025-05-21T18:45:17.921+0000] {logging_mixin.py:151} INFO - [2025-05-21T18:45:17.921+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T18:45:17.938+0000] {processor.py:839} INFO - DAG(s) dict_keys(['weather_streaming_pipeline']) retrieved from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T18:45:17.990+0000] {logging_mixin.py:151} INFO - [2025-05-21T18:45:17.989+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T18:45:18.012+0000] {logging_mixin.py:151} INFO - [2025-05-21T18:45:18.011+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T17:56:46.173738+00:00, run_after=2025-05-21T18:56:46.173738+00:00
+[2025-05-21T18:45:18.033+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.117 seconds
+[2025-05-21T18:50:17.571+0000] {processor.py:157} INFO - Started process (PID=735) to work on /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T18:50:17.572+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/weather_streaming_dag.py for tasks to queue
+[2025-05-21T18:50:17.573+0000] {logging_mixin.py:151} INFO - [2025-05-21T18:50:17.573+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T18:50:17.589+0000] {processor.py:839} INFO - DAG(s) dict_keys(['weather_streaming_pipeline']) retrieved from /opt/airflow/dags/weather_streaming_dag.py
+[2025-05-21T18:50:17.619+0000] {logging_mixin.py:151} INFO - [2025-05-21T18:50:17.619+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T18:50:17.642+0000] {logging_mixin.py:151} INFO - [2025-05-21T18:50:17.642+0000] {dag.py:3696} INFO - Setting next_dagrun for weather_streaming_pipeline to 2025-05-21T17:56:46.173738+00:00, run_after=2025-05-21T18:56:46.173738+00:00
+[2025-05-21T18:50:17.667+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/weather_streaming_dag.py took 0.099 seconds

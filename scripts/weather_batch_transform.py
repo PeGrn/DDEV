@@ -215,17 +215,34 @@ def save_to_postgres(df, table_name):
     logger.info(f"Saving data to PostgreSQL table: {table_name}")
     
     try:
+        # Simplement ajouter les données sans essayer de vider la table d'abord
         postgres_properties = {
             "user": "postgres",
             "password": "postgres",
             "driver": "org.postgresql.Driver"
         }
         
+        # Vérifier si la table a déjà des données
+        has_data_df = spark.read.format("jdbc") \
+            .option("url", "jdbc:postgresql://postgres:5432/nyc_taxi_db") \
+            .option("dbtable", f"(SELECT COUNT(*) as cnt FROM {table_name}) t") \
+            .option("user", "postgres") \
+            .option("password", "postgres") \
+            .option("driver", "org.postgresql.Driver") \
+            .load()
+        
+        has_data = has_data_df.first()["cnt"] > 0
+        
+        if has_data:
+            logger.info(f"Table {table_name} already has data. Consider emptying it first to avoid duplicates.")
+            # On pourrait offrir une option pour continuer ou annuler ici
+        
+        # Sauvegarder les données
         df.write \
             .jdbc(
                 url="jdbc:postgresql://postgres:5432/nyc_taxi_db",
                 table=table_name,
-                mode="overwrite",
+                mode="append",
                 properties=postgres_properties
             )
         
@@ -233,6 +250,9 @@ def save_to_postgres(df, table_name):
     except Exception as e:
         logger.error(f"Failed to save data to PostgreSQL: {str(e)}")
         logger.error(traceback.format_exc())
+        logger.error("Detailed error information:")
+        logger.error(f"DataFrame has {df.count()} rows")
+        logger.error(f"DataFrame schema: {df.schema}")
         raise
 
 def main():
