@@ -1,1 +1,49 @@
-airflow/logs/scheduler/latest
+# Fichiers JAR volumineux
+jars/aws-java-sdk-bundle-1.11.901.jar
+jars/*.jar
+
+# Répertoires générés
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs Airflow
+airflow/logs/
+airflow-webserver.pid
+airflow-scheduler.pid
+
+# Fichiers de données volumineux
+*.parquet
+*.csv
+*.xlsx
+*.xls
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fichiers de configuration avec des informations sensibles
+*.env
+*.config
+*.cfg
