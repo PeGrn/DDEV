@@ -1,0 +1,62 @@
+[2025-05-21T12:57:11.427+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.transform_taxi_data scheduled__2025-05-20T12:56:30.339606+00:00 [queued]>
+[2025-05-21T12:57:11.446+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: yellow_taxi_batch_pipeline.transform_taxi_data scheduled__2025-05-20T12:56:30.339606+00:00 [queued]>
+[2025-05-21T12:57:11.449+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2025-05-21T12:57:11.486+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): transform_taxi_data> on 2025-05-20 12:56:30.339606+00:00
+[2025-05-21T12:57:11.504+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'yellow_taxi_batch_pipeline', 'transform_taxi_data', 'scheduled__2025-05-20T12:56:30.339606+00:00', '--job-id', '86', '--raw', '--subdir', 'DAGS_FOLDER/taxi_batch_dag.py', '--cfg-path', '/tmp/tmp3r_a0_hi']
+[2025-05-21T12:57:11.511+0000] {standard_task_runner.py:85} INFO - Job 86: Subtask transform_taxi_data
+[2025-05-21T12:57:11.511+0000] {standard_task_runner.py:57} INFO - Started process 325 to run task
+[2025-05-21T12:57:11.550+0000] {logging_mixin.py:151} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-21T12:57:11.661+0000] {task_command.py:415} INFO - Running <TaskInstance: yellow_taxi_batch_pipeline.transform_taxi_data scheduled__2025-05-20T12:56:30.339606+00:00 [running]> on host 259a8bd0604d
+[2025-05-21T12:57:11.823+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='yellow_taxi_batch_pipeline' AIRFLOW_CTX_TASK_ID='transform_taxi_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-20T12:56:30.339606+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-20T12:56:30.339606+00:00'
+[2025-05-21T12:57:11.825+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-21T12:57:11.827+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n    spark-submit         --master spark://spark-master:7077         --jars /opt/airflow/dags/jars/***ql-42.5.0.jar         --packages org.apache.hadoop:hadoop-aws:3.3.1         /opt/airflow/dags/scripts/taxi_transform.py\n    ']
+[2025-05-21T12:57:11.838+0000] {subprocess.py:86} INFO - Output:
+[2025-05-21T12:57:11.849+0000] {subprocess.py:93} INFO - /opt/spark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-05-21T12:57:14.599+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-05-21T12:57:14.827+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/airflow/.ivy2/cache
+[2025-05-21T12:57:14.828+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/airflow/.ivy2/jars
+[2025-05-21T12:57:14.839+0000] {subprocess.py:93} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2025-05-21T12:57:14.843+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-9425e0cf-077e-4144-b23a-7374244535ca;1.0
+[2025-05-21T12:57:14.844+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-05-21T12:57:16.906+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.1 in central
+[2025-05-21T12:57:17.608+0000] {subprocess.py:93} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.11.901 in central
+[2025-05-21T12:57:18.452+0000] {subprocess.py:93} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2025-05-21T12:57:18.484+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.jar ...
+[2025-05-21T12:57:18.545+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-aws;3.3.1!hadoop-aws.jar (77ms)
+[2025-05-21T12:57:18.564+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.901/aws-java-sdk-bundle-1.11.901.jar ...
+[2025-05-21T12:57:27.797+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] com.amazonaws#aws-java-sdk-bundle;1.11.901!aws-java-sdk-bundle.jar (9249ms)
+[2025-05-21T12:57:27.822+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/wildfly/openssl/wildfly-openssl/1.0.7.Final/wildfly-openssl-1.0.7.Final.jar ...
+[2025-05-21T12:57:27.879+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.wildfly.openssl#wildfly-openssl;1.0.7.Final!wildfly-openssl.jar (73ms)
+[2025-05-21T12:57:27.884+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 3623ms :: artifacts dl 9414ms
+[2025-05-21T12:57:27.885+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-05-21T12:57:27.886+0000] {subprocess.py:93} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.11.901 from central in [default]
+[2025-05-21T12:57:27.887+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-aws;3.3.1 from central in [default]
+[2025-05-21T12:57:27.887+0000] {subprocess.py:93} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2025-05-21T12:57:27.888+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-05-21T12:57:27.889+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-05-21T12:57:27.889+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-05-21T12:57:27.890+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-05-21T12:57:27.891+0000] {subprocess.py:93} INFO - 	|      default     |   3   |   3   |   3   |   0   ||   3   |   3   |
+[2025-05-21T12:57:27.891+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-05-21T12:57:27.901+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-9425e0cf-077e-4144-b23a-7374244535ca
+[2025-05-21T12:57:27.903+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-05-21T12:57:29.165+0000] {subprocess.py:93} INFO - 	3 artifacts copied, 0 already retrieved (189078kB/1263ms)
+[2025-05-21T12:57:30.164+0000] {subprocess.py:93} INFO - 25/05/21 12:57:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-05-21T12:57:33.743+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-05-21T12:57:33.744+0000] {subprocess.py:93} INFO -   File "/opt/airflow/dags/scripts/taxi_transform.py", line 182, in <module>
+[2025-05-21T12:57:33.745+0000] {subprocess.py:93} INFO -     spark = create_spark_session()
+[2025-05-21T12:57:33.746+0000] {subprocess.py:93} INFO -   File "/opt/airflow/dags/scripts/taxi_transform.py", line 20, in create_spark_session
+[2025-05-21T12:57:33.747+0000] {subprocess.py:93} INFO -     os.environ['AWS_ACCESS_KEY_ID'] = 'minio'
+[2025-05-21T12:57:33.748+0000] {subprocess.py:93} INFO - NameError: name 'os' is not defined
+[2025-05-21T12:57:33.881+0000] {subprocess.py:93} INFO - 25/05/21 12:57:33 INFO ShutdownHookManager: Shutdown hook called
+[2025-05-21T12:57:33.883+0000] {subprocess.py:93} INFO - 25/05/21 12:57:33 INFO ShutdownHookManager: Deleting directory /tmp/spark-66d40139-9f1d-4208-a1c2-1bfa0a94f5c0
+[2025-05-21T12:57:33.955+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-21T12:57:33.983+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-05-21T12:57:33.989+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=yellow_taxi_batch_pipeline, task_id=transform_taxi_data, execution_date=20250520T125630, start_date=20250521T125711, end_date=20250521T125733
+[2025-05-21T12:57:34.026+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 86 for task transform_taxi_data (Bash command failed. The command returned a non-zero exit code 1.; 325)
+[2025-05-21T12:57:34.051+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-21T12:57:34.110+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

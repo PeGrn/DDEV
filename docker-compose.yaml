@@ -18,6 +18,18 @@ services:
       interval: 5s
       retries: 5
 
+  postgres-init:
+    image: postgres:14
+    container_name: postgres-init
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+    command: sh -c "until pg_isready -h postgres -p 5432 -U postgres; do sleep 1; done && psql -h postgres -U postgres -f /docker-entrypoint-initdb.d/initdb.sql"
+    depends_on:
+      postgres:
+        condition: service_healthy
   # MinIO - Data Lake
   minio:
     image: minio/minio
@@ -45,6 +57,7 @@ services:
     container_name: airflow-init
     depends_on:
       - postgres
+      - postgres-init
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:postgres@postgres/airflow
@@ -151,6 +164,10 @@ services:
       - postgres
     volumes:
       - ./dbt:/usr/app/dbt
+    # Ajouter ces lignes pour remplacer l'ENTRYPOINT du Dockerfile
+    entrypoint: ["/bin/bash", "-c"]
+    # Commande à exécuter : installer pytz et garder le conteneur en fonctionnement
+    command: ["pip install pytz && tail -f /dev/null"]
 
 volumes:
   postgres_data:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
     col, hour, dayofweek, when, lit, 
@@ -16,9 +16,18 @@ logger = logging.getLogger(__name__)
 
 def create_spark_session():
     """Create and return a Spark session."""
+    # Configuration pour l'accès à MinIO
+    os.environ['AWS_ACCESS_KEY_ID'] = 'minio'
+    os.environ['AWS_SECRET_ACCESS_KEY'] = 'minio123'
+    
     spark = SparkSession.builder \
         .appName("YellowTaxiTransform") \
-        .config("spark.jars", "/opt/spark/jars/postgresql-42.5.0.jar") \
+        .config("spark.hadoop.fs.s3a.endpoint", "http://minio:9000") \
+        .config("spark.hadoop.fs.s3a.access.key", "minio") \
+        .config("spark.hadoop.fs.s3a.secret.key", "minio123") \
+        .config("spark.hadoop.fs.s3a.path.style.access", "true") \
+        .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
+        .config("spark.hadoop.fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider") \
         .getOrCreate()
     return spark
 

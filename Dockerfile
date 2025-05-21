@@ -20,6 +20,17 @@ RUN wget https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SP
     mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} ${SPARK_HOME} && \
     rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 
+# Créer les répertoires nécessaires pour les JARs
+RUN mkdir -p /opt/airflow/dags/jars
+
+# Télécharger les JARs nécessaires
+RUN wget https://jdbc.postgresql.org/download/postgresql-42.5.0.jar -P /opt/airflow/dags/jars/ && \
+    wget https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.901/aws-java-sdk-bundle-1.11.901.jar -P /opt/airflow/dags/jars/ && \
+    wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.jar -P /opt/airflow/dags/jars/
+
+# Copier les JARs dans le répertoire de Spark
+RUN cp /opt/airflow/dags/jars/*.jar ${SPARK_HOME}/jars/
+
 # Ajouter Spark au PATH
 ENV PATH $PATH:${SPARK_HOME}/bin
 

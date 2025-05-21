@@ -39,35 +39,40 @@ def ensure_bucket_exists(s3_client, bucket_name):
         logger.info(f"Creating bucket {bucket_name}")
         s3_client.create_bucket(Bucket=bucket_name)
 
-def download_taxi_data(year, months, s3_client):
+def download_taxi_data(years_and_months, s3_client):
     """
-    Download yellow taxi data for specified year and months and upload to MinIO.
-    Only download 1 year of data as specified in the requirements.
+    Download yellow taxi data for specified years and months and upload to MinIO.
+    years_and_months is a dictionary where keys are years and values are lists of months.
     """
     base_url = "https://d37ci6vzurychx.cloudfront.net/trip-data"
     
-    for month in months:
-        month_str = str(month).zfill(2)
-        file_name = f"yellow_tripdata_{year}-{month_str}.parquet"
-        url = f"{base_url}/{file_name}"
-        
-        logger.info(f"Downloading {file_name} from {url}")
-        
-        try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                # Upload directly to MinIO
-                object_key = f"{FOLDER_NAME}/{file_name}"
-                s3_client.upload_fileobj(
-                    BytesIO(response.content),
-                    BUCKET_NAME,
-                    object_key
-                )
-                logger.info(f"Successfully uploaded {file_name} to MinIO")
-            else:
-                logger.error(f"Failed to download {file_name}: HTTP Status {response.status_code}")
-        except Exception as e:
-            logger.error(f"Error downloading {file_name}: {str(e)}")
+    for year, months in years_and_months.items():
+        for month in months:
+            month_str = str(month).zfill(2)
+            file_name = f"yellow_tripdata_{year}-{month_str}.parquet"
+            url = f"{base_url}/{file_name}"
+            
+            logger.info(f"Downloading {file_name} from {url}")
+            
+            try:
+                response = requests.get(url)
+                if response.status_code == 200:
+                    # Upload directly to MinIO
+                    object_key = f"{FOLDER_NAME}/{file_name}"
+                    s3_client.upload_fileobj(
+                        BytesIO(response.content),
+                        BUCKET_NAME,
+                        object_key
+                    )
+                    logger.info(f"Successfully uploaded {file_name} to MinIO")
+                else:
+                    logger.error(f"Failed to download {file_name}: HTTP Status {response.status_code}")
+            except Exception as e:
+                logger.error(f"Error downloading {file_name}: {str(e)}")
+            
+            # Add a small delay to avoid overwhelming the server
+            import time
+            time.sleep(1)
 
 def main():
     # Create MinIO client
@@ -76,13 +81,17 @@ def main():
     # Ensure bucket exists
     ensure_bucket_exists(s3_client, BUCKET_NAME)
     
-    # Download 1 year of data (2022)
-    year = 2022
-    months = range(1, 13)  # All months of 2022
+    # Define years and months to download (January 2022 to December 2023)
+    years_and_months = {
+        2022: range(1, 13),  # All months of 2022
+        2023: range(1, 13)   # All months of 2023
+    }
+
     
-    download_taxi_data(year, months, s3_client)
+    # Download the data
+    download_taxi_data(years_and_months, s3_client)
     
-    logger.info("Taxi data download completed")
+    logger.info("Taxi data download completed for 2022-2023")
 
 if __name__ == "__main__":
     main()
