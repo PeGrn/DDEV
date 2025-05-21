@@ -896,3 +896,10 @@
 [2025-05-21T20:09:48.891+0000] {logging_mixin.py:151} INFO - [2025-05-21T20:09:48.891+0000] {dag.py:2915} INFO - Sync 1 DAGs
 [2025-05-21T20:09:48.911+0000] {logging_mixin.py:151} INFO - [2025-05-21T20:09:48.910+0000] {dag.py:3696} INFO - Setting next_dagrun for yellow_taxi_batch_pipeline to 2025-05-21T16:56:46.292639+00:00, run_after=2025-05-22T16:56:46.292639+00:00
 [2025-05-21T20:09:48.931+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/taxi_batch_dag.py took 0.100 seconds
+[2025-05-21T20:29:17.447+0000] {processor.py:157} INFO - Started process (PID=36146) to work on /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T20:29:17.450+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/taxi_batch_dag.py for tasks to queue
+[2025-05-21T20:29:17.451+0000] {logging_mixin.py:151} INFO - [2025-05-21T20:29:17.451+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T20:29:17.468+0000] {processor.py:839} INFO - DAG(s) dict_keys(['yellow_taxi_batch_pipeline']) retrieved from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T20:29:17.497+0000] {logging_mixin.py:151} INFO - [2025-05-21T20:29:17.496+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T20:29:17.515+0000] {logging_mixin.py:151} INFO - [2025-05-21T20:29:17.515+0000] {dag.py:3696} INFO - Setting next_dagrun for yellow_taxi_batch_pipeline to 2025-05-21T16:56:46.292639+00:00, run_after=2025-05-22T16:56:46.292639+00:00
+[2025-05-21T20:29:17.536+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/taxi_batch_dag.py took 0.091 seconds

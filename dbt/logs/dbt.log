@@ -1056,3 +1056,603 @@ drop table if exists "nyc_taxi_db"."public"."high_value_customers__dbt_backup" c
 [0m17:53:49.665107 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
 [0m17:53:49.666972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7500073880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f750087f640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f750007d820>]}
 [0m17:53:49.668400 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-05-21 20:14:37.372151 | 11d96e05-c51d-4701-894a-ae0e1eaa8b61 ==============================
+[0m20:14:37.372936 [info ] [MainThread]: Running with dbt=1.3.0
+[0m20:14:37.375369 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/usr/app/dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m20:14:37.376821 [debug] [MainThread]: Tracking: tracking
+[0m20:14:37.389301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4f0c9880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4f0c9760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4f0c97c0>]}
+[0m20:14:37.864662 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:14:37.866153 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:14:37.890227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '11d96e05-c51d-4701-894a-ae0e1eaa8b61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4ed230d0>]}
+[0m20:14:37.925451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '11d96e05-c51d-4701-894a-ae0e1eaa8b61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4edc7430>]}
+[0m20:14:37.927078 [info ] [MainThread]: Found 5 models, 0 tests, 0 snapshots, 0 analyses, 289 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics
+[0m20:14:37.928695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '11d96e05-c51d-4701-894a-ae0e1eaa8b61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4edc7460>]}
+[0m20:14:37.933774 [info ] [MainThread]: 
+[0m20:14:37.937646 [debug] [MainThread]: Acquiring new postgres connection "master"
+[0m20:14:37.944954 [debug] [ThreadPool]: Acquiring new postgres connection "list_nyc_taxi_db"
+[0m20:14:38.030414 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_db"
+[0m20:14:38.031847 [debug] [ThreadPool]: On list_nyc_taxi_db: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "connection_name": "list_nyc_taxi_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:14:38.033027 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:14:38.071599 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.04 seconds
+[0m20:14:38.076111 [debug] [ThreadPool]: On list_nyc_taxi_db: Close
+[0m20:14:38.081336 [debug] [ThreadPool]: Acquiring new postgres connection "list_nyc_taxi_db_public"
+[0m20:14:38.094553 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_db_public"
+[0m20:14:38.096697 [debug] [ThreadPool]: On list_nyc_taxi_db_public: BEGIN
+[0m20:14:38.097745 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:14:38.109209 [debug] [ThreadPool]: SQL status: BEGIN in 0.01 seconds
+[0m20:14:38.110679 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_db_public"
+[0m20:14:38.111905 [debug] [ThreadPool]: On list_nyc_taxi_db_public: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "connection_name": "list_nyc_taxi_db_public"} */
+select
+      'nyc_taxi_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'nyc_taxi_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m20:14:38.124319 [debug] [ThreadPool]: SQL status: SELECT 10 in 0.01 seconds
+[0m20:14:38.128659 [debug] [ThreadPool]: On list_nyc_taxi_db_public: ROLLBACK
+[0m20:14:38.130317 [debug] [ThreadPool]: On list_nyc_taxi_db_public: Close
+[0m20:14:38.142533 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:38.143902 [debug] [MainThread]: On master: BEGIN
+[0m20:14:38.145016 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:14:38.155487 [debug] [MainThread]: SQL status: BEGIN in 0.01 seconds
+[0m20:14:38.156877 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:38.158342 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m20:14:38.187627 [debug] [MainThread]: SQL status: SELECT 2 in 0.03 seconds
+[0m20:14:38.191273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '11d96e05-c51d-4701-894a-ae0e1eaa8b61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4ed69df0>]}
+[0m20:14:38.192744 [debug] [MainThread]: On master: ROLLBACK
+[0m20:14:38.194181 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:38.195370 [debug] [MainThread]: On master: BEGIN
+[0m20:14:38.197114 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m20:14:38.198089 [debug] [MainThread]: On master: COMMIT
+[0m20:14:38.198995 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:38.199951 [debug] [MainThread]: On master: COMMIT
+[0m20:14:38.201459 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m20:14:38.202618 [debug] [MainThread]: On master: Close
+[0m20:14:38.204477 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:14:38.206046 [info ] [MainThread]: 
+[0m20:14:38.241499 [debug] [Thread-1  ]: Began running node model.nyc_taxi.source_dim_weather
+[0m20:14:38.242036 [debug] [Thread-2  ]: Began running node model.nyc_taxi.source_fact_taxi_trips
+[0m20:14:38.245494 [info ] [Thread-2  ]: 2 of 5 START sql view model public.source_fact_taxi_trips ...................... [RUN]
+[0m20:14:38.243513 [info ] [Thread-1  ]: 1 of 5 START sql view model public.source_dim_weather .......................... [RUN]
+[0m20:14:38.248075 [debug] [Thread-2  ]: Acquiring new postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.250185 [debug] [Thread-1  ]: Acquiring new postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.252170 [debug] [Thread-2  ]: Began compiling node model.nyc_taxi.source_fact_taxi_trips
+[0m20:14:38.255480 [debug] [Thread-1  ]: Began compiling node model.nyc_taxi.source_dim_weather
+[0m20:14:38.256794 [debug] [Thread-2  ]: Compiling model.nyc_taxi.source_fact_taxi_trips
+[0m20:14:38.258280 [debug] [Thread-1  ]: Compiling model.nyc_taxi.source_dim_weather
+[0m20:14:38.266284 [debug] [Thread-2  ]: Writing injected SQL for node "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.273826 [debug] [Thread-1  ]: Writing injected SQL for node "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.282459 [debug] [Thread-2  ]: finished collecting timing info
+[0m20:14:38.284207 [debug] [Thread-2  ]: Began executing node model.nyc_taxi.source_fact_taxi_trips
+[0m20:14:38.284610 [debug] [Thread-1  ]: finished collecting timing info
+[0m20:14:38.310318 [debug] [Thread-1  ]: Began executing node model.nyc_taxi.source_dim_weather
+[0m20:14:38.439669 [debug] [Thread-1  ]: Writing runtime sql for node "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.440778 [debug] [Thread-2  ]: Writing runtime sql for node "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.455155 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.459621 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: BEGIN
+[0m20:14:38.461416 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m20:14:38.462826 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.465018 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: BEGIN
+[0m20:14:38.466332 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:14:38.477511 [debug] [Thread-2  ]: SQL status: BEGIN in 0.02 seconds
+[0m20:14:38.479310 [debug] [Thread-1  ]: SQL status: BEGIN in 0.01 seconds
+[0m20:14:38.481838 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.479882 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.483090 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+
+  create view "nyc_taxi_db"."public"."source_dim_weather__dbt_tmp" as (
+    
+
+SELECT
+    timestamp,
+    temperature,
+    humidity,
+    wind_speed,
+    weather_condition,
+    weather_description,
+    weather_category,
+    hour_of_day,
+    day_of_week
+FROM
+    "nyc_taxi_db"."public"."dim_weather"
+  );
+[0m20:14:38.484437 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+
+  create view "nyc_taxi_db"."public"."source_fact_taxi_trips__dbt_tmp" as (
+    
+
+SELECT
+    pickup_datetime,
+    dropoff_datetime,
+    trip_duration_minutes,
+    distance_km,
+    distance_bucket,
+    fare_amount,
+    tip_amount,
+    tip_percentage,
+    payment_type,
+    pickup_hour,
+    pickup_day_of_week,
+    passenger_count,
+    pickup_location_id,
+    dropoff_location_id
+FROM
+    "nyc_taxi_db"."public"."fact_taxi_trips"
+  );
+[0m20:14:38.519079 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0.03 seconds
+[0m20:14:38.519409 [debug] [Thread-2  ]: SQL status: CREATE VIEW in 0.03 seconds
+[0m20:14:38.533486 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.537961 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.539235 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+alter table "nyc_taxi_db"."public"."source_dim_weather" rename to "source_dim_weather__dbt_backup"
+[0m20:14:38.542725 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+alter table "nyc_taxi_db"."public"."source_fact_taxi_trips" rename to "source_fact_taxi_trips__dbt_backup"
+[0m20:14:38.548515 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:14:38.548856 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:14:38.556250 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.563475 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.564345 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+alter table "nyc_taxi_db"."public"."source_dim_weather__dbt_tmp" rename to "source_dim_weather"
+[0m20:14:38.565459 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+alter table "nyc_taxi_db"."public"."source_fact_taxi_trips__dbt_tmp" rename to "source_fact_taxi_trips"
+[0m20:14:38.567456 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:14:38.568471 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:14:38.639398 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: COMMIT
+[0m20:14:38.642288 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: COMMIT
+[0m20:14:38.643848 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.645468 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.646850 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: COMMIT
+[0m20:14:38.648003 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: COMMIT
+[0m20:14:38.651310 [debug] [Thread-1  ]: SQL status: COMMIT in 0.0 seconds
+[0m20:14:38.652562 [debug] [Thread-2  ]: SQL status: COMMIT in 0.0 seconds
+[0m20:14:38.664822 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:14:38.671421 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:14:38.672558 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+drop view if exists "nyc_taxi_db"."public"."source_dim_weather__dbt_backup" cascade
+[0m20:14:38.673978 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+drop view if exists "nyc_taxi_db"."public"."source_fact_taxi_trips__dbt_backup" cascade
+[0m20:14:38.694256 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0.02 seconds
+[0m20:14:38.695180 [debug] [Thread-2  ]: SQL status: DROP VIEW in 0.02 seconds
+[0m20:14:38.698453 [debug] [Thread-1  ]: finished collecting timing info
+[0m20:14:38.702627 [debug] [Thread-2  ]: finished collecting timing info
+[0m20:14:38.707006 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: Close
+[0m20:14:38.709066 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: Close
+[0m20:14:38.711994 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '11d96e05-c51d-4701-894a-ae0e1eaa8b61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4e9dc0a0>]}
+[0m20:14:38.714287 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '11d96e05-c51d-4701-894a-ae0e1eaa8b61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4e9ae1f0>]}
+[0m20:14:38.715865 [info ] [Thread-1  ]: 1 of 5 OK created sql view model public.source_dim_weather ..................... [[32mCREATE VIEW[0m in 0.46s]
+[0m20:14:38.722849 [info ] [Thread-2  ]: 2 of 5 OK created sql view model public.source_fact_taxi_trips ................. [[32mCREATE VIEW[0m in 0.47s]
+[0m20:14:38.725582 [debug] [Thread-1  ]: Finished running node model.nyc_taxi.source_dim_weather
+[0m20:14:38.727956 [debug] [Thread-2  ]: Finished running node model.nyc_taxi.source_fact_taxi_trips
+[0m20:14:38.733373 [debug] [Thread-4  ]: Began running node model.nyc_taxi.trip_enriched
+[0m20:14:38.735087 [info ] [Thread-4  ]: 3 of 5 START sql table model public.trip_enriched .............................. [RUN]
+[0m20:14:38.737355 [debug] [Thread-4  ]: Acquiring new postgres connection "model.nyc_taxi.trip_enriched"
+[0m20:14:38.738729 [debug] [Thread-4  ]: Began compiling node model.nyc_taxi.trip_enriched
+[0m20:14:38.739903 [debug] [Thread-4  ]: Compiling model.nyc_taxi.trip_enriched
+[0m20:14:38.752589 [debug] [Thread-4  ]: Writing injected SQL for node "model.nyc_taxi.trip_enriched"
+[0m20:14:38.767137 [debug] [Thread-4  ]: finished collecting timing info
+[0m20:14:38.768749 [debug] [Thread-4  ]: Began executing node model.nyc_taxi.trip_enriched
+[0m20:14:38.848702 [debug] [Thread-4  ]: Writing runtime sql for node "model.nyc_taxi.trip_enriched"
+[0m20:14:38.863877 [debug] [Thread-4  ]: Using postgres connection "model.nyc_taxi.trip_enriched"
+[0m20:14:38.865396 [debug] [Thread-4  ]: On model.nyc_taxi.trip_enriched: BEGIN
+[0m20:14:38.867003 [debug] [Thread-4  ]: Opening a new connection, currently in state init
+[0m20:14:38.885229 [debug] [Thread-4  ]: SQL status: BEGIN in 0.02 seconds
+[0m20:14:38.887561 [debug] [Thread-4  ]: Using postgres connection "model.nyc_taxi.trip_enriched"
+[0m20:14:38.889504 [debug] [Thread-4  ]: On model.nyc_taxi.trip_enriched: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.trip_enriched"} */
+
+  
+    
+
+  create  table "nyc_taxi_db"."public"."trip_enriched__dbt_tmp"
+  as (
+    
+
+WITH taxi_trips AS (
+    SELECT *
+    FROM "nyc_taxi_db"."public"."source_fact_taxi_trips"
+),
+
+weather AS (
+    SELECT *
+    FROM "nyc_taxi_db"."public"."source_dim_weather"
+)
+
+SELECT
+    t.pickup_datetime,
+    t.dropoff_datetime,
+    t.trip_duration_minutes,
+    t.distance_km,
+    t.distance_bucket,
+    t.fare_amount,
+    t.tip_amount,
+    t.tip_percentage,
+    t.payment_type,
+    t.pickup_hour,
+    t.pickup_day_of_week,
+    t.passenger_count,
+    t.pickup_location_id,
+    t.dropoff_location_id,
+    w.temperature,
+    w.humidity,
+    w.wind_speed,
+    w.weather_condition,
+    w.weather_category
+FROM
+    taxi_trips t
+LEFT JOIN
+    weather w
+    -- Join on the closest weather observation by hour
+    ON t.pickup_hour = w.hour_of_day
+    AND t.pickup_day_of_week = w.day_of_week
+  );
+  
+[0m20:27:10.105262 [debug] [MainThread]: Acquiring new postgres connection "master"
+[0m20:27:10.173295 [debug] [MainThread]: Postgres adapter: Cancelling query 'model.nyc_taxi.trip_enriched' (2039)
+[0m20:27:10.190973 [debug] [MainThread]: Using postgres connection "master"
+[0m20:27:10.194320 [debug] [MainThread]: On master: BEGIN
+[0m20:27:10.200101 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:27:10.341676 [debug] [MainThread]: SQL status: BEGIN in 0.14 seconds
+[0m20:27:10.343849 [debug] [MainThread]: Using postgres connection "master"
+[0m20:27:10.344917 [debug] [MainThread]: On master: select pg_terminate_backend(2039)
+[0m20:27:10.356872 [debug] [MainThread]: SQL status: SELECT 1 in 0.01 seconds
+[0m20:27:10.361964 [debug] [MainThread]: Postgres adapter: Cancel query 'model.nyc_taxi.trip_enriched': (True,)
+[0m20:27:10.396517 [error] [MainThread]: CANCEL query model.nyc_taxi.source_dim_weather ................................. [[31mCANCEL[0m]
+[0m20:27:10.409221 [error] [MainThread]: CANCEL query model.nyc_taxi.source_fact_taxi_trips ............................. [[31mCANCEL[0m]
+[0m20:27:10.411178 [error] [MainThread]: CANCEL query model.nyc_taxi.trip_enriched ...................................... [[31mCANCEL[0m]
+[0m20:27:10.417252 [debug] [MainThread]: On master: ROLLBACK
+[0m20:27:10.420338 [debug] [MainThread]: On master: Close
+[0m20:27:10.468547 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:27:10.469962 [debug] [MainThread]: Connection 'model.nyc_taxi.source_dim_weather' was properly closed.
+[0m20:27:10.471434 [debug] [MainThread]: Connection 'model.nyc_taxi.source_fact_taxi_trips' was properly closed.
+[0m20:27:10.473460 [debug] [MainThread]: Connection 'model.nyc_taxi.trip_enriched' was left open.
+[0m20:27:10.474477 [debug] [MainThread]: On model.nyc_taxi.trip_enriched: ROLLBACK
+[0m20:27:11.901392 [debug] [Thread-4  ]: Postgres adapter: Postgres error: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[0m20:27:11.903040 [debug] [MainThread]: Failed to rollback 'model.nyc_taxi.trip_enriched'
+[0m20:27:11.905535 [debug] [MainThread]: On model.nyc_taxi.trip_enriched: Close
+[0m20:27:11.923361 [debug] [MainThread]: Flushing usage events
+[0m20:27:11.969268 [debug] [Thread-4  ]: finished collecting timing info
+[0m20:27:12.039080 [debug] [Thread-4  ]: Database Error in model trip_enriched (models/intermediate/trip_enriched.sql)
+  server closed the connection unexpectedly
+  	This probably means the server terminated abnormally
+  	before or while processing the request.
+  compiled Code at target/run/nyc_taxi/models/intermediate/trip_enriched.sql
+[0m20:27:12.132923 [debug] [Thread-4  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '11d96e05-c51d-4701-894a-ae0e1eaa8b61', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6f4e968be0>]}
+[0m20:27:13.249272 [info ] [MainThread]: ctrl-c
+[0m20:27:13.266286 [error] [Thread-4  ]: 3 of 5 ERROR creating sql table model public.trip_enriched ..................... [[31mERROR[0m in 753.33s]
+
+
+============================== 2025-05-21 20:31:19.206586 | 2b02055b-fd22-436e-9189-1ce7d2e53752 ==============================
+[0m20:31:19.206624 [info ] [MainThread]: Running with dbt=1.3.0
+[0m20:31:19.207891 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/usr/app/dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m20:31:19.209106 [debug] [MainThread]: Tracking: tracking
+[0m20:31:19.221832 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5441bf0310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5441bf0400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5441bf03a0>]}
+[0m20:31:19.547154 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:31:19.548563 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:31:19.560874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2b02055b-fd22-436e-9189-1ce7d2e53752', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f544175f0d0>]}
+[0m20:31:19.586494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2b02055b-fd22-436e-9189-1ce7d2e53752', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54417ba220>]}
+[0m20:31:19.587949 [info ] [MainThread]: Found 5 models, 0 tests, 0 snapshots, 0 analyses, 289 macros, 0 operations, 0 seed files, 2 sources, 0 exposures, 0 metrics
+[0m20:31:19.589320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2b02055b-fd22-436e-9189-1ce7d2e53752', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54417ba040>]}
+[0m20:31:19.597647 [info ] [MainThread]: 
+[0m20:31:19.599690 [debug] [MainThread]: Acquiring new postgres connection "master"
+[0m20:31:19.603122 [debug] [ThreadPool]: Acquiring new postgres connection "list_nyc_taxi_db"
+[0m20:31:19.624445 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_db"
+[0m20:31:19.625781 [debug] [ThreadPool]: On list_nyc_taxi_db: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "connection_name": "list_nyc_taxi_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:31:19.626789 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:31:19.653996 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.03 seconds
+[0m20:31:19.656957 [debug] [ThreadPool]: On list_nyc_taxi_db: Close
+[0m20:31:19.660490 [debug] [ThreadPool]: Acquiring new postgres connection "list_nyc_taxi_db_public"
+[0m20:31:19.671212 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_db_public"
+[0m20:31:19.672771 [debug] [ThreadPool]: On list_nyc_taxi_db_public: BEGIN
+[0m20:31:19.673763 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:31:19.682186 [debug] [ThreadPool]: SQL status: BEGIN in 0.01 seconds
+[0m20:31:19.683466 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_db_public"
+[0m20:31:19.684532 [debug] [ThreadPool]: On list_nyc_taxi_db_public: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "connection_name": "list_nyc_taxi_db_public"} */
+select
+      'nyc_taxi_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'nyc_taxi_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+[0m20:31:19.704783 [debug] [ThreadPool]: SQL status: SELECT 10 in 0.02 seconds
+[0m20:31:19.753878 [debug] [ThreadPool]: On list_nyc_taxi_db_public: ROLLBACK
+[0m20:31:19.755567 [debug] [ThreadPool]: On list_nyc_taxi_db_public: Close
+[0m20:31:19.765184 [debug] [MainThread]: Using postgres connection "master"
+[0m20:31:19.766485 [debug] [MainThread]: On master: BEGIN
+[0m20:31:19.767420 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:31:19.777489 [debug] [MainThread]: SQL status: BEGIN in 0.01 seconds
+[0m20:31:19.778601 [debug] [MainThread]: Using postgres connection "master"
+[0m20:31:19.779619 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m20:31:19.824652 [debug] [MainThread]: SQL status: SELECT 2 in 0.04 seconds
+[0m20:31:19.827926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2b02055b-fd22-436e-9189-1ce7d2e53752', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54416a5df0>]}
+[0m20:31:19.829345 [debug] [MainThread]: On master: ROLLBACK
+[0m20:31:19.830925 [debug] [MainThread]: Using postgres connection "master"
+[0m20:31:19.832073 [debug] [MainThread]: On master: BEGIN
+[0m20:31:19.833884 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m20:31:19.835092 [debug] [MainThread]: On master: COMMIT
+[0m20:31:19.836208 [debug] [MainThread]: Using postgres connection "master"
+[0m20:31:19.837278 [debug] [MainThread]: On master: COMMIT
+[0m20:31:19.838565 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m20:31:19.839835 [debug] [MainThread]: On master: Close
+[0m20:31:19.841748 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:31:19.843118 [info ] [MainThread]: 
+[0m20:31:19.854699 [debug] [Thread-1  ]: Began running node model.nyc_taxi.source_dim_weather
+[0m20:31:19.855131 [debug] [Thread-2  ]: Began running node model.nyc_taxi.source_fact_taxi_trips
+[0m20:31:19.856381 [info ] [Thread-1  ]: 1 of 5 START sql view model public.source_dim_weather .......................... [RUN]
+[0m20:31:19.858256 [info ] [Thread-2  ]: 2 of 5 START sql view model public.source_fact_taxi_trips ...................... [RUN]
+[0m20:31:19.860698 [debug] [Thread-1  ]: Acquiring new postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:31:19.862577 [debug] [Thread-2  ]: Acquiring new postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:19.863858 [debug] [Thread-1  ]: Began compiling node model.nyc_taxi.source_dim_weather
+[0m20:31:19.865477 [debug] [Thread-2  ]: Began compiling node model.nyc_taxi.source_fact_taxi_trips
+[0m20:31:19.866978 [debug] [Thread-1  ]: Compiling model.nyc_taxi.source_dim_weather
+[0m20:31:19.868067 [debug] [Thread-2  ]: Compiling model.nyc_taxi.source_fact_taxi_trips
+[0m20:31:19.876499 [debug] [Thread-1  ]: Writing injected SQL for node "model.nyc_taxi.source_dim_weather"
+[0m20:31:19.884749 [debug] [Thread-2  ]: Writing injected SQL for node "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:19.894057 [debug] [Thread-1  ]: finished collecting timing info
+[0m20:31:19.897571 [debug] [Thread-1  ]: Began executing node model.nyc_taxi.source_dim_weather
+[0m20:31:19.898825 [debug] [Thread-2  ]: finished collecting timing info
+[0m20:31:19.924226 [debug] [Thread-2  ]: Began executing node model.nyc_taxi.source_fact_taxi_trips
+[0m20:31:20.057950 [debug] [Thread-1  ]: Writing runtime sql for node "model.nyc_taxi.source_dim_weather"
+[0m20:31:20.058713 [debug] [Thread-2  ]: Writing runtime sql for node "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:20.067436 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:31:20.069039 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:20.069406 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: BEGIN
+[0m20:31:20.070593 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: BEGIN
+[0m20:31:20.071545 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:31:20.072489 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m20:31:20.080812 [debug] [Thread-1  ]: SQL status: BEGIN in 0.01 seconds
+[0m20:31:20.081119 [debug] [Thread-2  ]: SQL status: BEGIN in 0.01 seconds
+[0m20:31:20.081989 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:31:20.082931 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:20.083862 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+
+  create view "nyc_taxi_db"."public"."source_dim_weather__dbt_tmp" as (
+    
+
+SELECT
+    timestamp,
+    temperature,
+    humidity,
+    wind_speed,
+    weather_condition,
+    weather_description,
+    weather_category,
+    hour_of_day,
+    day_of_week
+FROM
+    "nyc_taxi_db"."public"."dim_weather"
+  );
+[0m20:31:20.084780 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+
+  create view "nyc_taxi_db"."public"."source_fact_taxi_trips__dbt_tmp" as (
+    
+
+SELECT
+    pickup_datetime,
+    dropoff_datetime,
+    trip_duration_minutes,
+    distance_km,
+    distance_bucket,
+    fare_amount,
+    tip_amount,
+    tip_percentage,
+    payment_type,
+    pickup_hour,
+    pickup_day_of_week,
+    passenger_count,
+    pickup_location_id,
+    dropoff_location_id
+FROM
+    "nyc_taxi_db"."public"."fact_taxi_trips"
+  );
+[0m20:31:20.104375 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0.02 seconds
+[0m20:31:20.104887 [debug] [Thread-2  ]: SQL status: CREATE VIEW in 0.02 seconds
+[0m20:31:20.121028 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:31:20.126629 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:20.128145 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+alter table "nyc_taxi_db"."public"."source_dim_weather" rename to "source_dim_weather__dbt_backup"
+[0m20:31:20.129437 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+alter table "nyc_taxi_db"."public"."source_fact_taxi_trips" rename to "source_fact_taxi_trips__dbt_backup"
+[0m20:31:20.135637 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:31:20.136098 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:31:20.141950 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:31:20.148300 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:20.149830 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+alter table "nyc_taxi_db"."public"."source_dim_weather__dbt_tmp" rename to "source_dim_weather"
+[0m20:31:20.151243 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+alter table "nyc_taxi_db"."public"."source_fact_taxi_trips__dbt_tmp" rename to "source_fact_taxi_trips"
+[0m20:31:20.153331 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:31:20.154200 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.0 seconds
+[0m20:31:20.222621 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: COMMIT
+[0m20:31:20.227663 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: COMMIT
+[0m20:31:20.228904 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:31:20.230475 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:20.231800 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: COMMIT
+[0m20:31:20.232984 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: COMMIT
+[0m20:31:20.236705 [debug] [Thread-1  ]: SQL status: COMMIT in 0.0 seconds
+[0m20:31:20.243696 [debug] [Thread-2  ]: SQL status: COMMIT in 0.01 seconds
+[0m20:31:20.248566 [debug] [Thread-1  ]: Using postgres connection "model.nyc_taxi.source_dim_weather"
+[0m20:31:20.253138 [debug] [Thread-2  ]: Using postgres connection "model.nyc_taxi.source_fact_taxi_trips"
+[0m20:31:20.255040 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_dim_weather"} */
+drop view if exists "nyc_taxi_db"."public"."source_dim_weather__dbt_backup" cascade
+[0m20:31:20.256627 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: /* {"app": "dbt", "dbt_version": "1.3.0", "profile_name": "nyc_taxi", "target_name": "dev", "node_id": "model.nyc_taxi.source_fact_taxi_trips"} */
+drop view if exists "nyc_taxi_db"."public"."source_fact_taxi_trips__dbt_backup" cascade
+[0m20:31:20.272641 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0.01 seconds
+[0m20:31:20.273675 [debug] [Thread-2  ]: SQL status: DROP VIEW in 0.01 seconds
+[0m20:31:20.275588 [debug] [Thread-1  ]: finished collecting timing info
+[0m20:31:20.278005 [debug] [Thread-2  ]: finished collecting timing info
+[0m20:31:20.278976 [debug] [Thread-1  ]: On model.nyc_taxi.source_dim_weather: Close
+[0m20:31:20.280190 [debug] [Thread-2  ]: On model.nyc_taxi.source_fact_taxi_trips: Close
+[0m20:31:20.281996 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2b02055b-fd22-436e-9189-1ce7d2e53752', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54417315e0>]}
+[0m20:31:20.283478 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2b02055b-fd22-436e-9189-1ce7d2e53752', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f54416c2f70>]}
+[0m20:31:20.284688 [info ] [Thread-1  ]: 1 of 5 OK created sql view model public.source_dim_weather ..................... [[32mCREATE VIEW[0m in 0.42s]
+[0m20:31:20.286289 [info ] [Thread-2  ]: 2 of 5 OK created sql view model public.source_fact_taxi_trips ................. [[32mCREATE VIEW[0m in 0.42s]
+[0m20:31:20.287690 [debug] [Thread-1  ]: Finished running node model.nyc_taxi.source_dim_weather
+[0m20:31:20.288934 [debug] [Thread-2  ]: Finished running node model.nyc_taxi.source_fact_taxi_trips
+[0m20:31:20.292827 [debug] [Thread-4  ]: Began running node model.nyc_taxi.trip_enriched
+[0m20:31:20.294541 [info ] [Thread-4  ]: 3 of 5 START sql table model public.trip_enriched .............................. [RUN]
+[0m20:31:20.297392 [debug] [Thread-4  ]: Acquiring new postgres connection "model.nyc_taxi.trip_enriched"
+[0m20:31:20.298924 [debug] [Thread-4  ]: Began compiling node model.nyc_taxi.trip_enriched
+[0m20:31:20.300079 [debug] [Thread-4  ]: Compiling model.nyc_taxi.trip_enriched
+[0m20:31:20.307452 [debug] [Thread-4  ]: Writing injected SQL for node "model.nyc_taxi.trip_enriched"
+[0m20:31:20.320529 [debug] [Thread-4  ]: finished collecting timing info
+[0m20:31:20.321716 [debug] [Thread-4  ]: Began executing node model.nyc_taxi.trip_enriched
+[0m20:31:20.364968 [debug] [Thread-4  ]: Writing runtime sql for node "model.nyc_taxi.trip_enriched"
+[0m20:31:20.376743 [debug] [Thread-4  ]: Using postgres connection "model.nyc_taxi.trip_enriched"
+[0m20:31:20.378051 [debug] [Thread-4  ]: On model.nyc_taxi.trip_enriched: BEGIN
+[0m20:31:20.380928 [debug] [Thread-4  ]: Opening a new connection, currently in state init
+[0m20:31:20.390331 [debug] [Thread-4  ]: SQL status: BEGIN in 0.01 seconds
+[0m20:31:20.391553 [debug] [Thread-4  ]: Using postgres connection "model.nyc_taxi.trip_enriched"
