@@ -817,3 +817,26 @@
 [2025-05-21T13:27:03.338+0000] {logging_mixin.py:151} INFO - [2025-05-21T13:27:03.338+0000] {dag.py:2915} INFO - Sync 1 DAGs
 [2025-05-21T13:27:03.365+0000] {logging_mixin.py:151} INFO - [2025-05-21T13:27:03.365+0000] {dag.py:3696} INFO - Setting next_dagrun for yellow_taxi_batch_pipeline to 2025-05-21T12:56:30.339606+00:00, run_after=2025-05-22T12:56:30.339606+00:00
 [2025-05-21T13:27:03.391+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/taxi_batch_dag.py took 0.139 seconds
+[2025-05-21T16:55:25.218+0000] {processor.py:157} INFO - Started process (PID=220) to work on /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:55:25.220+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/taxi_batch_dag.py for tasks to queue
+[2025-05-21T16:55:25.221+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:55:25.220+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:55:25.259+0000] {processor.py:839} INFO - DAG(s) dict_keys(['yellow_taxi_batch_pipeline']) retrieved from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:55:25.520+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:55:25.520+0000] {security.py:708} INFO - Not syncing DAG-level permissions for DAG 'DAG:yellow_taxi_batch_pipeline' as access control is unset.
+[2025-05-21T16:55:25.521+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:55:25.521+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T16:55:25.531+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:55:25.531+0000] {dag.py:2937} INFO - Creating ORM DAG for yellow_taxi_batch_pipeline
+[2025-05-21T16:55:25.541+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:55:25.541+0000] {dag.py:3696} INFO - Setting next_dagrun for yellow_taxi_batch_pipeline to 2025-05-20T16:55:25.541362+00:00, run_after=2025-05-21T16:55:25.541362+00:00
+[2025-05-21T16:55:25.565+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/taxi_batch_dag.py took 0.351 seconds
+[2025-05-21T16:56:16.017+0000] {processor.py:157} INFO - Started process (PID=245) to work on /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:56:16.019+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/taxi_batch_dag.py for tasks to queue
+[2025-05-21T16:56:16.020+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:16.019+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:56:16.043+0000] {processor.py:839} INFO - DAG(s) dict_keys(['yellow_taxi_batch_pipeline']) retrieved from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:56:16.077+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:16.077+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T16:56:16.098+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:16.098+0000] {dag.py:3696} INFO - Setting next_dagrun for yellow_taxi_batch_pipeline to 2025-05-20T16:56:16.098369+00:00, run_after=2025-05-21T16:56:16.098369+00:00
+[2025-05-21T16:56:16.122+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/taxi_batch_dag.py took 0.108 seconds
+[2025-05-21T16:56:46.228+0000] {processor.py:157} INFO - Started process (PID=267) to work on /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:56:46.229+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/taxi_batch_dag.py for tasks to queue
+[2025-05-21T16:56:46.230+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:46.230+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:56:46.250+0000] {processor.py:839} INFO - DAG(s) dict_keys(['yellow_taxi_batch_pipeline']) retrieved from /opt/airflow/dags/taxi_batch_dag.py
+[2025-05-21T16:56:46.275+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:46.275+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2025-05-21T16:56:46.292+0000] {logging_mixin.py:151} INFO - [2025-05-21T16:56:46.292+0000] {dag.py:3696} INFO - Setting next_dagrun for yellow_taxi_batch_pipeline to 2025-05-20T16:56:46.292639+00:00, run_after=2025-05-21T16:56:46.292639+00:00
+[2025-05-21T16:56:46.311+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/taxi_batch_dag.py took 0.086 seconds

@@ -1,5 +1,5 @@
 # Modifier le Dockerfile
-docker exec -it airflow-webserver cat > ./dbt/Dockerfile << 'EOL'
+
 FROM python:3.9-slim
 
 WORKDIR /usr/app/dbt
@@ -17,10 +17,3 @@ COPY . .
 # Set entry point
 ENTRYPOINT ["dbt"]
 CMD ["run"]
-EOL
-
-# Reconstruire l'image dbt
-docker-compose build dbt
-
-# Redémarrer le conteneur dbt
-docker-compose up -d dbt
