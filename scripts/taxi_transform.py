@@ -117,7 +117,7 @@ def transform_taxi_data(df):
     return transformed_df
 
 def save_to_postgres(df, table_name):
-    """Save DataFrame to PostgreSQL."""
+    """Save DataFrame to PostgreSQL using TRUNCATE + INSERT to avoid dependency issues."""
     postgres_properties = {
         "user": "postgres",
         "password": "postgres",
@@ -128,15 +128,54 @@ def save_to_postgres(df, table_name):
     logger.info("Columns being saved to PostgreSQL:")
     logger.info(f"Schema: {df.schema}")
     
-    df.write \
-        .jdbc(
-            url="jdbc:postgresql://postgres:5432/nyc_taxi_db",
-            table=table_name,
-            mode="overwrite",
-            properties=postgres_properties
-        )
-    
-    logger.info(f"Data saved to PostgreSQL table: {table_name}")
+    try:
+        # SOLUTION: Manually truncate the table first via SQL connection
+        logger.info(f"Truncating table {table_name} to avoid dependency conflicts...")
+        
+        # Create a connection to execute TRUNCATE
+        import subprocess
+        truncate_command = f"""
+        docker exec nyc_taxi_postgres psql -U postgres -d nyc_taxi_db -c "TRUNCATE TABLE {table_name} CASCADE;"
+        """
+        
+        # Execute the truncate command
+        result = subprocess.run(truncate_command, shell=True, capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            logger.info(f"Successfully truncated table {table_name}")
+        else:
+            logger.warning(f"Could not truncate table (might not exist yet): {result.stderr}")
+        
+        # Now use append mode to insert data
+        logger.info(f"Inserting data into {table_name} using append mode...")
+        df.write \
+            .jdbc(
+                url="jdbc:postgresql://postgres:5432/nyc_taxi_db",
+                table=table_name,
+                mode="append",  # CHANGED: Use append instead of overwrite
+                properties=postgres_properties
+            )
+        
+        logger.info(f"Data successfully saved to PostgreSQL table: {table_name}")
+        
+    except Exception as e:
+        logger.error(f"Error during save operation: {str(e)}")
+        
+        # Fallback: try direct append (will add to existing data)
+        logger.info("Trying direct append as fallback...")
+        try:
+            df.write \
+                .jdbc(
+                    url="jdbc:postgresql://postgres:5432/nyc_taxi_db",
+                    table=table_name,
+                    mode="append",
+                    properties=postgres_properties
+                )
+            
+            logger.info(f"Data appended to PostgreSQL table: {table_name}")
+        except Exception as fallback_error:
+            logger.error(f"Fallback append also failed: {str(fallback_error)}")
+            raise fallback_error
 
 def prepare_fact_taxi_trips(df):
     """Prepare final fact_taxi_trips table."""

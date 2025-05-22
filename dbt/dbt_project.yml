@@ -45,7 +45,5 @@ models:
         columns: true
     marts:
       materialized: table
-      # Tables finales avec index pour les performances
-      +post-hook:
-        - "CREATE INDEX IF NOT EXISTS idx_{{ this.name }}_pickup_datetime ON {{ this }} (pickup_datetime)"
-        - "CREATE INDEX IF NOT EXISTS idx_{{ this.name }}_weather_category ON {{ this }} (weather_category)"
+      # Pas d'index automatique pour éviter les conflits de colonnes
+      +post-hook: []
