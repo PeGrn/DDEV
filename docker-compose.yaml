@@ -56,14 +56,26 @@ services:
       dockerfile: Dockerfile
     container_name: airflow-init
     depends_on:
-      - postgres
-      - postgres-init
+      postgres:
+        condition: service_healthy
+      postgres-init:
+        condition: service_completed_successfully
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:postgres@postgres/airflow
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW_UID: 50000
-    command: version
+    command: >
+      bash -c "
+        airflow db init &&
+        airflow users create \
+          --username airflow \
+          --firstname Airflow \
+          --lastname Admin \
+          --role Admin \
+          --email airflow@example.com \
+          --password airflow
+      "
     user: "50000:0"
     volumes:
       - ./airflow:/opt/airflow
@@ -81,6 +93,7 @@ services:
       AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:postgres@postgres/airflow
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__WEBSERVER__SECRET_KEY: "airflow_secret_key"
+      AIRFLOW__WEBSERVER__WORKERS: "2"
     command: webserver
     ports:
       - "8080:8080"
