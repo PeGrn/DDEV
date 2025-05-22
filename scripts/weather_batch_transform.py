@@ -60,6 +60,13 @@ def process_weather_data(spark):
             logger.warning("No weather data found.")
             return None
         
+        # Remove duplicates based on timestamp to avoid processing the same data multiple times
+        logger.info("Removing duplicates based on timestamp...")
+        raw_weather_df = raw_weather_df.dropDuplicates(["dt"])
+        
+        deduplicated_count = raw_weather_df.count()
+        logger.info(f"After deduplication: {deduplicated_count} unique weather records.")
+        
         # Print schema to debug
         logger.info("Raw weather data schema:")
         raw_weather_df.printSchema()
@@ -211,25 +218,23 @@ def process_weather_data(spark):
         raise
 
 def save_to_postgres(df, table_name):
-    """Save DataFrame to PostgreSQL."""
+    """Save DataFrame to PostgreSQL using append mode only (since we cleaned the table manually)."""
     logger.info(f"Saving data to PostgreSQL table: {table_name}")
     
     try:
-        # Configuration JDBC avec propriétés spéciales pour les dépendances
+        # Configuration JDBC
         postgres_properties = {
             "user": "postgres",
             "password": "postgres",
-            "driver": "org.postgresql.Driver",
-            "truncate": "true"  # Cette option est importante
+            "driver": "org.postgresql.Driver"
         }
         
-        # D'abord vider la table sans la supprimer, puis ajouter les données
+        # Simply append data (table will be created if it doesn't exist)
         df.write \
-            .option("truncate", "true") \
             .jdbc(
                 url="jdbc:postgresql://postgres:5432/nyc_taxi_db",
                 table=table_name,
-                mode="append",  # Utiliser append au lieu de overwrite
+                mode="append",  # Use append mode
                 properties=postgres_properties
             )
         
@@ -257,6 +262,13 @@ def main():
         # Count the results
         count = weather_df.count()
         logger.info(f"Processed {count} weather records that will be saved to PostgreSQL")
+        
+        # Expected count validation
+        expected_count = 17520  # 2 years * 365 days * 24 hours
+        if count != expected_count:
+            logger.warning(f"Expected {expected_count} records but got {count}. This might indicate duplicate data or missing files.")
+        else:
+            logger.info(f"Perfect! Got exactly {expected_count} records as expected.")
         
         # Save to PostgreSQL
         save_to_postgres(weather_df, "dim_weather")
