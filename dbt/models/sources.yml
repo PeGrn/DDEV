@@ -2,12 +2,12 @@ version: 2
 
 sources:
   - name: nyc_taxi
-    description: "NYC Yellow Taxi and Weather data"
+    description: "NYC Yellow Taxi and Weather data - Sampled for testing"
     database: nyc_taxi_db
     schema: public
     tables:
       - name: fact_taxi_trips
-        description: "Yellow taxi trip data"
+        description: "Yellow taxi trip data (sampled)"
         columns:
           - name: pickup_datetime
             description: "Time when the meter was engaged"
@@ -39,7 +39,7 @@ sources:
             description: "TLC Taxi Zone of dropoff location"
 
       - name: dim_weather
-        description: "Weather data for NYC"
+        description: "Weather data for NYC (complete dataset)"
         columns:
           - name: timestamp
             description: "Timestamp of weather observation"

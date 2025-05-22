@@ -16,11 +16,36 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+# Variables pour contrôler l'échantillonnage
+vars:
+  # Période d'échantillonnage (pour réduire la fenêtre temporelle)
+  start_date: "2022-01-01"
+  end_date: "2022-04-01" # 3 mois au lieu de 2 ans
+
+  # Facteur d'échantillonnage (1 = 100%, 0.01 = 1%, etc.)
+  taxi_sample_rate: 0.003 # ≈ 0.3% des données
+
+  # Nombre de groupes NTILE pour l'échantillonnage stratifié
+  ntile_groups: 1000
+  selected_groups: 3 # Prendre les 3 premiers groupes
+
 models:
   nyc_taxi:
     staging:
       materialized: view
+      # Optimisations pour les vues d'échantillonnage
+      +persist_docs:
+        relation: true
+        columns: true
     intermediate:
       materialized: view
+      # Vues intermédiaires rapides
+      +persist_docs:
+        relation: true
+        columns: true
     marts:
       materialized: table
+      # Tables finales avec index pour les performances
+      +post-hook:
+        - "CREATE INDEX IF NOT EXISTS idx_{{ this.name }}_pickup_datetime ON {{ this }} (pickup_datetime)"
+        - "CREATE INDEX IF NOT EXISTS idx_{{ this.name }}_weather_category ON {{ this }} (weather_category)"
